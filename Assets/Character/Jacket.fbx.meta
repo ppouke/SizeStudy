@@ -75,7 +75,7 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     bakeAxisConversion: 0
-    preserveHierarchy: 0
+    preserveHierarchy: 1
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
@@ -110,8 +110,8 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.00090000004
-    rootMotionBoneName: 
+    globalScale: 0.09
+    rootMotionBoneName: Spine
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

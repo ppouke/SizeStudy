@@ -5458,11 +5458,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b69d0a49ea68bd24ba1056bcec8f46e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.29750004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b69d0a49ea68bd24ba1056bcec8f46e9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.168
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b69d0a49ea68bd24ba1056bcec8f46e9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5696,6 +5696,11 @@ MonoBehaviour:
   - m_Rig: {fileID: 1538298753}
     m_Active: 1
   m_Effectors: []
+--- !u!4 &789892791 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5605764023424333450, guid: b69d0a49ea68bd24ba1056bcec8f46e9, type: 3}
+  m_PrefabInstance: {fileID: 789892767}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &799744299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6352,7 +6357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5485b0d6d9cbd8145a6f017147293615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _RootObject: {fileID: 789892789}
+  _RootObject: {fileID: 789892791}
   _FollowObject: {fileID: 292926083}
   _PositionOffset: {x: 0, y: 0, z: 0}
   _RotationOffset: {x: 0, y: 0, z: 0}
