@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
+using UnityEngine.XR;
 
 public class MasterController : MonoBehaviour
 {
@@ -16,20 +18,32 @@ public class MasterController : MonoBehaviour
 
     public Transform[] locations = new Transform[3];
 
+    public InputAction upDownModifier;
+
     public InputAction changeScaleAction;
     public InputAction changeHeightAction;
     public InputAction changeLocationAction;
     public InputAction changeBodyAction;
 
+    public InputAction concealLoc;
+
+
 
     [SerializeField] private GameObject iKBody;
     [SerializeField] private GameObject[] hands = new GameObject[2];
+
+    [SerializeField] private GameObject hiderObj;
 
     private int bodyIndex;
     private int scaleIndex;
     private int heightIndex;
     private int locIndex;
 
+    private bool isHidden;
+
+    public TMP_Text text;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -42,12 +56,14 @@ public class MasterController : MonoBehaviour
             scaleChanges[i] = new Vector3(1, 1, 1) * scaleValues[i];
         }
         
-
+        
 
         changeScaleAction.Enable();
         changeHeightAction.Enable();
         changeLocationAction.Enable();
         changeBodyAction.Enable();
+        upDownModifier.Enable();
+        concealLoc.Enable();
         scaleIndex = 0;
         heightIndex = 0;
         locIndex = 0;
@@ -63,18 +79,36 @@ public class MasterController : MonoBehaviour
             hands[i].SetActive(false);
         }
         iKBody.SetActive(false);
+
+        //set hidden
+        isHidden = true;
+
+        hiderObj.SetActive(true);
+        
+
+        XRSettings.enabled = false;
+        string currConfig = $"S,H,L,B \n{scaleIndex},{heightIndex}, {locIndex}, {bodyIndex}";
+        text.SetText(currConfig);
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        int upDownFloat = (int)upDownModifier.ReadValue<float>();
+
         if(changeScaleAction.triggered)
         {
 
-            scaleIndex = Mathf.Min(scaleIndex + 1, 2);
+            scaleIndex = Mathf.Max(Mathf.Min(scaleIndex + upDownFloat, 2),0);
+            string currConfig = $"S,H,L,B \n{scaleIndex},{heightIndex}, {locIndex}, {bodyIndex}";
+            text.SetText(currConfig);
 
             gameObject.transform.localScale = scaleChanges[scaleIndex];
+            hiderObj.transform.localScale = new Vector3(
+                1/scaleChanges[scaleIndex].x,
+                1/scaleChanges[scaleIndex].y,
+                1/scaleChanges[scaleIndex].z) * 0.1f;
 
            
   
@@ -82,14 +116,18 @@ public class MasterController : MonoBehaviour
 
         if (changeHeightAction.triggered) 
         {
-            heightIndex = Mathf.Min(heightIndex + 1, 2);
-    
+            heightIndex = Mathf.Max(Mathf.Min(heightIndex + upDownFloat, 2),0);
+            string currConfig = $"S,H,L,B \n{scaleIndex},{heightIndex}, {locIndex}, {bodyIndex}";
+            text.SetText(currConfig);
+
             gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, heightValues[heightIndex], gameObject.transform.localPosition.z);
         }
 
         if (changeLocationAction.triggered) 
         {
-            locIndex = Mathf.Min(locIndex + 1, 2);
+            locIndex = Mathf.Max(Mathf.Min(locIndex + upDownFloat, 2),0);
+            string currConfig = $"S,H,L,B \n{scaleIndex},{heightIndex}, {locIndex}, {bodyIndex}";
+            text.SetText(currConfig);
 
             Vector3 locPos = locations[locIndex].position;
             gameObject.transform.position = new Vector3(locPos.x, heightValues[heightIndex], locPos.z);
@@ -97,9 +135,12 @@ public class MasterController : MonoBehaviour
 
         if (changeBodyAction.triggered) 
         {
-            bodyIndex = Mathf.Min(bodyIndex + 1, 2);
+            bodyIndex = Mathf.Max(Mathf.Min(bodyIndex + upDownFloat, 1),0);
+            string currConfig = $"S,H,L,B \n{scaleIndex},{heightIndex}, {locIndex}, {bodyIndex}";
+            text.SetText(currConfig);
+            //cant get ik sys to work 
 
-            if(bodyIndex == 1) 
+            if (bodyIndex == 1) 
             {
                 for(int i = 0; i < hands.Length; i++) 
                 {
@@ -119,7 +160,37 @@ public class MasterController : MonoBehaviour
 
             }
 
+            if (bodyIndex == 0) {
+                for (int i = 0; i < hands.Length; i++)
+                {
+                    hands[i].SetActive(false);
+                }
+                iKBody.SetActive(false);
+            }
+
             
+        }
+
+        if (concealLoc.triggered) 
+        {
+            isHidden = !isHidden;
+
+            if (isHidden) 
+            {
+                hiderObj.SetActive(true);
+                XRSettings.enabled = false;
+                string currConfig = $"S,H,L,B \n{scaleIndex},{heightIndex}, {locIndex}, {bodyIndex}";
+                text.SetText(currConfig);
+                
+
+            }
+            else 
+            {
+                
+                hiderObj.SetActive(false);
+                XRSettings.enabled = true;
+
+            }
         }
 
         
