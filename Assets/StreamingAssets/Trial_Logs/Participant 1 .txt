@@ -1,0 +1,6 @@
+
+________________________
+Trial 1:
+Staring conf: 0,0,0,0
+S S H H L L L 
+Final conf: 2,2,2,0

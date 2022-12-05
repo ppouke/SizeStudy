@@ -60,7 +60,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.09
+    globalScale: 9.5
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -228,87 +228,87 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Jacket
       parentName: Jacket(Clone)
-      position: {x: -0.00073084835, y: -0.34037045, z: 0.1229928}
+      position: {x: -0.00077145116, y: -0.35927996, z: 0.12982579}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
     - name: Spine
       parentName: Jacket
-      position: {x: 0.0000073084834, y: -0.0000036842825, z: 0.00006797168}
+      position: {x: 0.000007714512, y: -0.000003888966, z: 0.000071747905}
       rotation: {x: 0.5, y: 0.5, z: 0.5000001, w: 0.49999985}
       scale: {x: 1, y: 0.99999994, z: 1}
     - name: MidTorso
       parentName: Spine
-      position: {x: -2.6782777e-14, y: 0.001983844, z: -2.0125098e-13}
+      position: {x: -2.8270716e-14, y: 0.0020940586, z: -2.1243163e-13}
       rotation: {x: 3.8144713e-14, y: 1.2090646e-15, z: -0.0000001352026, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Chest
       parentName: MidTorso
-      position: {x: 3.3637427e-14, y: 0.0016020715, z: -2.014075e-13}
+      position: {x: 3.5506185e-14, y: 0.001691076, z: -2.1259684e-13}
       rotation: {x: -9.8865635e-15, y: -6.197533e-22, z: 0.000000032307778, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Clavicle.L
       parentName: Chest
-      position: {x: 0.00019351888, y: 0.0015232514, z: -0.0006255074}
+      position: {x: 0.00020426996, y: 0.0016078769, z: -0.00066025794}
       rotation: {x: 0.6097932, y: 0.357984, z: -0.6097927, w: -0.35798404}
       scale: {x: 1, y: 1, z: 1}
     - name: UpperArm.L
       parentName: Clavicle.L
-      position: {x: 2.2648411e-10, y: 0.0011037624, z: 5.195307e-12}
+      position: {x: 2.3906663e-10, y: 0.0011650828, z: 5.483936e-12}
       rotation: {x: 0.014420147, y: -0.00046697207, z: 0.09186937, w: 0.99566656}
       scale: {x: 1, y: 1, z: 0.99999994}
     - name: ForeArm.L
       parentName: UpperArm.L
-      position: {x: 1.566892e-10, y: 0.0023309449, z: 2.346933e-11}
+      position: {x: 1.6539421e-10, y: 0.0024604418, z: 2.4773187e-11}
       rotation: {x: 0.14050128, y: -0.0357635, z: -0.022316517, w: 0.9891827}
       scale: {x: 1, y: 1, z: 0.99999994}
     - name: Hand.L
       parentName: ForeArm.L
-      position: {x: -1.8775465e-10, y: 0.0021993762, z: 8.046627e-11}
+      position: {x: -1.981855e-10, y: 0.0023215644, z: 8.493666e-11}
       rotation: {x: 0.047818877, y: 0.0009680917, z: -0.02873885, w: 0.99844205}
       scale: {x: 1, y: 1, z: 0.9999999}
     - name: Hand.L_end
       parentName: Hand.L
-      position: {x: -0, y: 0.0010844083, z: 0}
+      position: {x: -0, y: 0.0011446537, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Clavicle.R
       parentName: Chest
-      position: {x: 0.00019351851, y: 0.0015232514, z: 0.0006255075}
+      position: {x: 0.00020426956, y: 0.0016078769, z: 0.00066025805}
       rotation: {x: -0.6097928, y: 0.35798416, z: 0.60979307, w: -0.35798395}
       scale: {x: 0.99999994, y: 0.9999998, z: 0.9999999}
     - name: UpperArm.R
       parentName: Clavicle.R
-      position: {x: -6.680493e-11, y: 0.0011037623, z: -2.4914472e-12}
+      position: {x: -7.051633e-11, y: 0.0011650828, z: -2.6298607e-12}
       rotation: {x: 0.014420159, y: 0.0004669889, z: -0.09186941, w: 0.99566656}
       scale: {x: 0.99999994, y: 1, z: 0.99999994}
     - name: ForeArm.R
       parentName: UpperArm.R
-      position: {x: 5.7782747e-11, y: 0.0023309446, z: 6.705523e-12}
+      position: {x: 6.099291e-11, y: 0.0024604418, z: 7.078053e-12}
       rotation: {x: 0.14050126, y: 0.035763506, z: 0.022316478, w: 0.9891827}
       scale: {x: 1, y: 0.9999998, z: 0.9999999}
     - name: Hand.R
       parentName: ForeArm.R
-      position: {x: -3.5874548e-10, y: 0.0021993758, z: 2.6822091e-11}
+      position: {x: -3.786759e-10, y: 0.002321564, z: 2.8312212e-11}
       rotation: {x: 0.036681198, y: -0.0017824004, z: 0.039100446, w: 0.9985602}
       scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
     - name: Hand.R_end
       parentName: Hand.R
-      position: {x: -0, y: 0.00082801667, z: 0}
+      position: {x: -0, y: 0.0008740177, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Neck
       parentName: Chest
-      position: {x: 1.8099962e-13, y: 0.0016604097, z: -2.013409e-13}
+      position: {x: 1.9105522e-13, y: 0.001752655, z: -2.1252654e-13}
       rotation: {x: 9.114999e-15, y: -1.4089851e-15, z: -0.000000032307792, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Head
       parentName: Neck
-      position: {x: 3.3533577e-14, y: 0.0009716004, z: -2.0143777e-13}
+      position: {x: 3.5396555e-14, y: 0.0010255785, z: -2.126288e-13}
       rotation: {x: 2.273092e-21, y: 1.1215144e-28, z: 3.4033894e-21, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Head_end
       parentName: Head
-      position: {x: -0, y: 0.0011861647, z: 0}
+      position: {x: -0, y: 0.0012520631, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: JacketMesh
@@ -323,7 +323,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.09
+    globalScale: 0.095
     rootMotionBoneName: Spine
     hasTranslationDoF: 0
     hasExtraRoot: 1

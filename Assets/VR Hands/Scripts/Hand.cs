@@ -8,7 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Hand : MonoBehaviour
 {
-
+ 
     public float speed;
 
     Animator animator;
@@ -31,6 +31,10 @@ public class Hand : MonoBehaviour
     void Update()
     {
         AnimateHand();
+
+
+
+
     }
 
     internal void SetGrip(float v)
